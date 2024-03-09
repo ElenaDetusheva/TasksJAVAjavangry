@@ -75,8 +75,27 @@ public class tasks_grpoup {
                 System.out.println(i + 1 + 1);
             }
         }
-
-
+//решение с помощью бинарного поиска
+        int n = 8;
+        int low = 0;
+        int high = n-1;
+        int mid = 0;
+        int result = 0;
+        if (arrNew[n-2]!=n){
+            result=n;
+        }else {
+            while (low < high && high > 1) {
+                mid = (low + high) / 2;
+                if (arrNew[mid - 1] == mid) {
+                    low = mid + 1;
+                    result = high;
+                } else {
+                    high = mid;
+                    result = mid;
+                }
+            }
+        }
+        System.out.println("mid " +result );
 //        (Продолжение 6.2) Написать калькулятор,
 //        который понимает римские и арабские цифры,
 //        для упрощения - достаточно, чтобы принимал числа до 10
